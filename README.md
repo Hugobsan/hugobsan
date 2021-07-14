@@ -1,6 +1,6 @@
 ### Hi there 👋
         
-<img src="./profile.gif"/>
+<img src="./profile01.gif"/>
 <div align="center">
 <a href="https://www.linkedin.com/in/hugobsan/"><img src="https://image.flaticon.com/icons/png/512/174/174857.png" width="5%" /></a>
 </div>
