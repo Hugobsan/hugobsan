@@ -1,6 +1,6 @@
 ### Hi there 👋
         
-    ![photo](./profile.png)
+    ![photo](./profile.gif)
     <center>
     <tr>
         <td><img width="400px" align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hugobsan&hide=html&layout=compact&theme=chartreuse-dark" /></td>
