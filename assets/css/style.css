@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'ExoSpace';
+    src: url('../fonts/exo_space/Exo\ Space\ DEMO.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('../fonts/Exo_2/Exo2-VariableFont_wght.ttf') format('truetype');
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fafafa;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 15px;
+}
+
+/* Navbar */
+nav {
+    background: #000000;
+    box-shadow: 0px 0px 10px #ffffff26;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 20px 60px;
+    width: 100%;
+    height: 70px;
+    color: #fafafa;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: #fafafa;
+    font-size: 18px;
+}
+
+.brand {
+    color: #14e956;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding: 0 10px 0 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid white;
+    animation: typing 1s steps(10) forwards;
+    max-width: fit-content;
+    position: relative;
+}
+
+.brand::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    /* Ajuste a espessura do cursor aqui */
+    background-color: white;
+    /* A cor do cursor */
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: white;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.options ul li {
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.options ul li.slideInDown {
+    animation: slideInDown 2.0s ease forwards;
+}
+
+.options ul li:hover {
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+    border-bottom: 3px solid green;
+}
+
+.options ul li.active {
+    border-bottom: 3px solid green;
+}
+
+.slideInDown {
+    animation: slideInDown 2.0s ease forwards;
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slideInUp {
+    animation: slideInUp 2.0s ease forwards;
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slideInLeft {
+    animation: slideInLeft 1.0s ease forwards;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideInRight {
+    animation: slideInRight 1.0s ease forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-0.5px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(1px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
+
+/* Presentation */
+.presentation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    color: #fafafa;
+    height: 75vh;
+    position: relative;
+    /* Add position: relative to position the pseudo-element */
+}
+
+.presentation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../img/background_space.svg") center/cover no-repeat,
+        linear-gradient(90deg, rgb(0, 128, 0) 0%, rgb(0, 164, 0) 100%);
+    filter: brightness(0.3);
+    z-index: -1;
+    /* Set z-index to -1 to ensure the pseudo-element is behind the content */
+}
+
+.presentation .picture {
+    width: 50%;
+    max-width: fit-content;
+    margin-left: 200px;
+}
+
+.presentation .text {
+    width: 50%;
+    max-width: fit-content;
+    margin-right: 200px;
+}
+
+.presentation .text h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'ExoSpace', sans-serif;
+    color: #14e956;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.presentation .text p {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    max-width: fit-content;
+    font-family: 'Exo2', sans-serif;
+}
+
+
+/* Skills */
+.skills {
+    background: #050810;
+    color: #fafafa;
+    height: 70vh;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'ExoSpace', sans-serif;
+}
+
+.skills h1{
+    padding: 20px;
+    text-align: center;
+    color: #14e956;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
