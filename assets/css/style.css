@@ -36,7 +36,7 @@ body {
 
 /* Navbar */
 nav {
-    background: #000000;
+    background: #050810;
     box-shadow: 0px 0px 10px #ffffff26;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 20px 60px;
@@ -52,9 +52,12 @@ nav a {
     font-size: 18px;
 }
 
-.brand {
+.text-gb{
     color: #14e956;
     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.brand {
     padding: 0 10px 0 0;
     font-size: 1.5rem;
     font-weight: 700;
@@ -123,10 +126,10 @@ nav a {
     animation: slideInDown 2.0s ease forwards;
 }
 
-.options ul li:hover {
+/* .options ul li:hover {
     animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
     border-bottom: 3px solid green;
-}
+} */
 
 .options ul li.active {
     border-bottom: 3px solid green;
@@ -265,8 +268,6 @@ nav a {
     font-weight: 700;
     margin-bottom: 20px;
     font-family: 'ExoSpace', sans-serif;
-    color: #14e956;
-    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .presentation .text p {
@@ -291,6 +292,4 @@ nav a {
 .skills h1{
     padding: 20px;
     text-align: center;
-    color: #14e956;
-    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }

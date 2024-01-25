@@ -1,3 +1,7 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     const brandElement = document.querySelector('.brand');
     const text = brandElement.textContent;
@@ -37,42 +41,28 @@ window.onload = function () {
 
     const options = document.querySelectorAll('.options ul li');
 
-    // options.forEach(option => {
-    //     option.addEventListener('mouseover', () => {
-    //         const originalText = option.textContent;
+    options.forEach(option => {
+        //Armazenando texto originais num dicionário
+        const originalText = option.textContent;
 
-    //         newText = undefined;
-    //         //Fazer isso enquanto a palavra não for igual a original
+        option.addEventListener('mouseover', () => { //Alterar o texto do link
+            const originalText = option.textContent;
 
-    //         while (newText != option.textContent) {
-    //             //Percorre o texto letra a letra
-    //             for (let i = 0; i < originalText.length; i++) {
-    //                 setTimeout(() => {
-    //                     //Substitui a letra aleatoriamente por um caracter, e não para até achar a letra original
-    //                     let newChar = originalText.charAt(i);
-    //                     while (newChar === originalText.charAt(i)) {
-    //                         newChar = String.fromCharCode(Math.floor(Math.random() * 255));
-    //                         //Verifica se o novo caractere é a letra original
-    //                         if (newChar === originalText.charAt(i)) {
-    //                             option.textContent = option.textContent.substring(0, i) + newChar + option.textContent.substring(i + 1);
-    //                             newText = option.textContent;
-    //                             break;
-    //                         }
-    //                         newText = option.textContent;
-    //                         option.textContent = option.textContent.substring(0, i) + newChar + option.textContent.substring(i + 1);
-    //                     }
-    //                 }, i * 50);
-    //             }
-    //         }
+            //Percorre o texto letra a letra
+            for (let i = 0; i < originalText.length; i++) {
+                //Substitui a letra por um caractere aleatorio
+                let newChar = String.fromCharCode(Math.floor(Math.random() * 255)); 
+                option.textContent = option.textContent.substring(0, i) + newChar + option.textContent.substring(i + 1); 
+                console.log(option.textContent);
+            }
 
+            sleep(1000).then(() => { //Espera 1 segundo
+                option.textContent = originalText;
+            });
+        });
 
-
-
-    //         option.textContent = newText;
-
-    //         setTimeout(() => {
-    //             option.textContent = originalText;
-    //         }, 500);
-    //     });
-    // });
+        option.addEventListener('mouseout', () => { //Retorna o texto original
+            option.textContent = originalText;
+        });
+    });
 }
